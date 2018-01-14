@@ -1,3 +1,16 @@
 <template>
-  <div class="f1 code">Hey what is up</div>
+  <Items></Items>
 </template>
+
+<script>
+import Items from '../components/Items.vue'
+
+export default {
+  components: {
+    Items
+  },
+  async fetch({ store }) {
+    await store.dispatch('LOAD_ITEMS', 'topstories.json')
+  }
+}
+</script>
