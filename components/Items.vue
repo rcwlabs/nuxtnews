@@ -7,11 +7,12 @@
         </div>
         <div class="title">
           {{item.title}}
+          <a :href="item.url">{{item.url | hostname}}</a>
         </div>
         <div class="details">
           by {{item.by}} {{item.time | timeSince}} ago
         </div>
-        <div class="comments">
+        <div v-if="item.descendants" class="comments">
           {{item.descendants}} comments
         </div>
       </li>
